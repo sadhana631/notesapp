@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   min-height:100vh;
 `
 
-export const MainContainer = styled.div`
+export const NotesContainer = styled.div`
   display:flex;
   flex-direction:column;
   width:90%;
@@ -56,7 +56,7 @@ export const TitleInput = styled.input`
   line-height:1.33;
 `
 
-export const NoteTextArea = styled.textaraea`
+export const NoteTextArea = styled.textarea`
   color:#1e293b;
   font-family:'Roboto';
   font-size:16px;
@@ -101,7 +101,7 @@ export const Image = styled.img`
   }
 `
 
-export const Empty NotesHeading = styled.h1`
+export const EmptyNotesHeading = styled.h1`
   color:#47556a;
   font-family:'Roboto';
   font-size:20px;
@@ -127,7 +127,7 @@ export const Description = styled.p`
   }
 `
 
-export const NotesList = styled.u1`
+export const NotesList = styled.ul`
   display:flex;
   flex-wrap:wrap;
   margin-top:24px;
@@ -136,4 +136,4 @@ export const NotesList = styled.u1`
   @media screen and (min-width:768px) {
     margin-top:320;
   }
-`  
+`

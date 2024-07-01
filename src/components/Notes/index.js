@@ -5,7 +5,7 @@ import NoteItem from '../NoteItem'
 
 import {
   MainContainer,
-  NoteContainer,
+  NotesContainer,
   Heading,
   Form,
   TitleInput,
@@ -15,7 +15,7 @@ import {
   Image,
   EmptyNotesHeading,
   Description,
-  NotesList,  
+  NotesList,
 } from './styledComponents'
 
 const Notes = () => {
@@ -27,18 +27,18 @@ const Notes = () => {
     <NotesList>
       {notesList.map(eachNote => (
         <NoteItem key={eachNote.id} noteDetails={eachNote} />
-      ))}  
-    </NotesList>  
-  )  
+      ))}
+    </NotesList>
+  )
 
   const renderEmptyNotesView = () => {
-    <EmptyNotesViewContainer>
-     <Image
-       src="https://assets.ccbp.in/frontend/hooks/empty-notes-img.png"
-       alt="notes empty"
-     />
-     <EmptyNotesHeading>No Notes Vet</EmptyNotesHeading>  
-     <Description>Notes you add will appear here</Description>
+    ;<EmptyNotesViewContainer>
+      <Image
+        src="https://assets.ccbp.in/frontend/hooks/empty-notes-img.png"
+        alt="notes empty"
+      />
+      <EmptyNotesHeading>No Notes Vet</EmptyNotesHeading>
+      <Description>Notes you add will appear here</Description>
     </EmptyNotesViewContainer>
   }
 
@@ -50,36 +50,36 @@ const Notes = () => {
     const newNote = {
       id: uuidv4(),
       title,
-      noteText,  
-  }  
-  setNotesList(prevNotesList => [...prevNotesList, newNote])
-  setTitle('')
-  setNoteText('')
+      notesText,
+    }
+    setNotesList(prevNotesList => [...prevNotesList, newNote])
+    setTitle('')
+    setNoteText('')
   }
 
   return (
     <MainContainer>
-     <NotesContainer>
-      <Heading>Notes</Heading>
-      <Form onSubmit={onAddNote}>
-       <TitleInput
-         type="text"
-         placeholder="Title"
-         value={title}
-         onChange={onChangeTitle}
-       />
-       <NoteTextArea
-         placeholder="Take a Note..."
-         value={noteText}
-         onChange={onChangeNoteText}
-         value="3"
-       />
-       <AddButton type="submit">Add</AddButton>    
-      </Form>
-      {notesList.length === 0 ? renderEmptyNotesView() = renderNotes()}
-     </NotesContainer>
-    </MainContainer>   
-    )
-  }  
+      <NotesContainer>
+        <Heading>Notes</Heading>
+        <Form onSubmit={onAddNote}>
+          <TitleInput
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={onChangeTitle}
+          />
+          <NoteTextArea
+            placeholder="Take a Note..."
+            value={notesText}
+            onChange={onChangeNoteText}
+            value="3"
+          />
+          <AddButton type="submit">Add</AddButton>
+        </Form>
+        {notesList.length === 0 ? renderEmptyNotesView() : renderNotes()}
+      </NotesContainer>
+    </MainContainer>
+  )
+}
 
-  export default Notes  
+export default Notes
